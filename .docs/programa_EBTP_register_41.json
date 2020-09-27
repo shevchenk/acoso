@@ -1,0 +1,50 @@
+{
+	"institucion": {
+		"id"   : "1977",
+		"tipo" : "1"
+	},
+	"programa" :{
+		"programa"               : "Informática",
+		"especialidad"           : "",
+		"tipo_sede"              : "PRINCIPAL",
+		"direccion"              : "Jr. Dos De Mayo 425",
+		"codigo_ubigeo"          : "100101",
+		"cui"                    : "2001019770002",
+		"contrasena"             : "123456",
+		"familia_productiva"     : "J26",
+		"subfamilia_profesional" : "44",
+		"telefono"               : "4785410"
+	},
+	"comite": [
+		{
+			"nombres"          : "aaaaa",
+			"apellido_paterno" : "sssss",
+			"apellido_materno" : "ddddd",
+			"cargo"            : "Decano",
+			"email"            : "correo1@correo.com",
+			"dni"              : "11111199",
+			"celular"          : "121212",
+			"principal"        : true
+		},
+		{
+			"nombres"          : "aaaaa",
+			"apellido_paterno" : "sssss",
+			"apellido_materno" : "ddddd",
+			"cargo"            : "Decano",
+			"email"            : "correo2@correo.com",
+			"dni"              : "11111188",
+			"celular"          : "121212",
+			"principal"        : false
+		},
+		{
+			"nombres"          : "aaaaa",
+			"apellido_paterno" : "sssss",
+			"apellido_materno" : "ddddd",
+			"cargo"            : "Decano",
+			"email"            : "correo3@correo.com",
+			"dni"              : "11111177",
+			"celular"          : "121212",
+			"principal"        : false
+		}
+	]
+}

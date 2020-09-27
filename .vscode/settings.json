@@ -1,0 +1,3 @@
+{
+    "html-css-class-completion.includeGlobPattern": "**/*.{css,html,php,js,blade.php}"
+}

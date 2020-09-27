@@ -1,0 +1,36 @@
+{
+	"institucion": {
+		"id"                : "1950",
+		"tipo"              : "1",
+		"tipo_dea"          : "2",
+		"codigo_gestion"    : "2",
+		"codmod_inicial"    : "",
+		"codmod_primaria"   : "",
+		"codmod_secundaria" : "",
+		"codigo_modular"    : "1224252",
+		"codigo_sunedu"     : "",
+		"nombre"            : "CETPRO SAN LUIS GONZAGA",
+		"ruc"               : "",
+		"razon_social"      : "",
+		"nombre_comercial"  : "",
+		"codigo_ubigeo"     : "100101",
+		"direccion"         : "Jirón Ayacucho 630",
+		"website"           : "https://www.sineace.gob.pe/",
+		"telefono"          : "4785410",
+		"username"          : "1224252",
+		"contrasena"        : "123456+"
+	},
+	"usuarios": [
+		{
+			"nombres"          : "Jhorman Alexander",
+			"apellido_paterno" : "Tasayco",
+			"apellido_materno" : "Tasayco",
+			"cargo"            : "DIRECTOR",
+			"email"            : "apoyo-oti06@sineace.gob.pe",
+			"dni"              : "72885453",
+			"username"         : "728854530001",
+			"contrasena"       : "123456",
+			"celular"          : "4784514"
+		}
+	]
+}

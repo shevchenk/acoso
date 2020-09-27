@@ -1,0 +1,36 @@
+{
+	"institucion": {
+		"id"                : "812",
+		"tipo"              : "1",
+		"tipo_dea"          : "1",
+		"codigo_gestion"    : "1",
+		"codmod_inicial"    : "",
+		"codmod_primaria"   : "212605",
+		"codmod_secundaria" : "",
+		"codigo_modular"    : "",
+		"codigo_sunedu"     : "",
+		"nombre"            : "I.E. N° 80322 CANDUALL BAJO",
+		"ruc"               : "",
+		"razon_social"      : "",
+		"nombre_comercial"  : "",
+		"codigo_ubigeo"     : "130501",
+		"direccion"         : "Oriente Huaychaca",
+		"website"           : "https://www.sineace.gob.pe/",
+		"telefono"          : "4785410",
+		"username"          : "212605",
+		"contrasena"        : "123456+"
+	},
+	"usuarios": [
+		{
+			"nombres"          : "Jhorman Alexander",
+			"apellido_paterno" : "Tasayco",
+			"apellido_materno" : "Tasayco",
+			"cargo"            : "DIRECTOR",
+			"email"            : "apoyo-oti06@sineace.gob.pe",
+			"dni"              : "72885453",
+			"username"         : "728854530001",
+			"contrasena"       : "123456",
+			"celular"          : "4784514"
+		}
+	]
+}

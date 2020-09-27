@@ -1,0 +1,50 @@
+{
+	"institucion": {
+		"id"   : "1950",
+		"tipo" : "1"
+	},
+	"programa" :{
+		"programa"               : "Peluquería Básica",
+		"especialidad"           : "",
+		"tipo_sede"              : "PRINCIPAL",
+		"direccion"              : "Jirón Ayacucho 630",
+		"codigo_ubigeo"          : "260403",
+		"cui"                    : "2001008120001",
+		"contrasena"             : "123456",
+		"familia_productiva"     : "S34",
+		"subfamilia_profesional" : "81",
+		"telefono"               : "4785410"
+	},
+	"comite": [
+		{
+			"nombres"          : "aaaaa",
+			"apellido_paterno" : "sssss",
+			"apellido_materno" : "ddddd",
+			"cargo"            : "Decano",
+			"email"            : "correo1@correo.com",
+			"dni"              : "11111199",
+			"celular"          : "121212",
+			"principal"        : true
+		},
+		{
+			"nombres"          : "aaaaa",
+			"apellido_paterno" : "sssss",
+			"apellido_materno" : "ddddd",
+			"cargo"            : "Decano",
+			"email"            : "correo2@correo.com",
+			"dni"              : "11111188",
+			"celular"          : "121212",
+			"principal"        : false
+		},
+		{
+			"nombres"          : "aaaaa",
+			"apellido_paterno" : "sssss",
+			"apellido_materno" : "ddddd",
+			"cargo"            : "Decano",
+			"email"            : "correo3@correo.com",
+			"dni"              : "11111177",
+			"celular"          : "121212",
+			"principal"        : false
+		}
+	]
+}

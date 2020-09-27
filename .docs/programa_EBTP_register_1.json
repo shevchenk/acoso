@@ -1,0 +1,50 @@
+{
+	"institucion": {
+		"id"   : "811",
+		"tipo" : "1"
+	},
+	"programa" :{
+		"programa"               : "INSTITUCIONAL",
+		"especialidad"           : "",
+		"tipo_sede"              : "PRINCIPAL",
+		"direccion"              : "Av. Republica de Panama 3659",
+		"codigo_ubigeo"          : "260403",
+		"cui"                    : "2001008110001",
+		"contrasena"             : "123456",
+		"familia_productiva"     : "",
+		"subfamilia_profesional" : "",
+		"telefono"               : "4785410"
+	},
+	"comite": [
+		{
+			"nombres"          : "aaaaa",
+			"apellido_paterno" : "sssss",
+			"apellido_materno" : "ddddd",
+			"cargo"            : "Decano",
+			"email"            : "correo1@correo.com",
+			"dni"              : "11111199",
+			"celular"          : "121212",
+			"principal"        : true
+		},
+		{
+			"nombres"          : "aaaaa",
+			"apellido_paterno" : "sssss",
+			"apellido_materno" : "ddddd",
+			"cargo"            : "Decano",
+			"email"            : "correo2@correo.com",
+			"dni"              : "11111188",
+			"celular"          : "121212",
+			"principal"        : false
+		},
+		{
+			"nombres"          : "aaaaa",
+			"apellido_paterno" : "sssss",
+			"apellido_materno" : "ddddd",
+			"cargo"            : "Decano",
+			"email"            : "correo3@correo.com",
+			"dni"              : "11111177",
+			"celular"          : "121212",
+			"principal"        : false
+		}
+	]
+}

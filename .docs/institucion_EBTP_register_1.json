@@ -1,0 +1,36 @@
+{
+	"institucion": {
+		"id"                : "811",
+		"tipo"              : "1",
+		"tipo_dea"          : "1",
+		"codigo_gestion"    : "2",
+		"codmod_inicial"    : "1552603",
+		"codmod_primaria"   : "1451723",
+		"codmod_secundaria" : "",
+		"codigo_modular"    : "",
+		"codigo_sunedu"     : "",
+		"nombre"            : "I.E. N° 82106 CÉSAR ABRAHAM VALLEJO MENDOZA",
+		"ruc"               : "",
+		"razon_social"      : "",
+		"nombre_comercial"  : "",
+		"codigo_ubigeo"     : "130501",
+		"direccion"         : "Oriente Huaychaca",
+		"website"           : "https://www.sineace.gob.pe/",
+		"telefono"          : "4785410",
+		"username"          : "1552603",
+		"contrasena"        : "123456+"
+	},
+	"usuarios": [
+		{
+			"nombres"          : "Jhorman Alexander",
+			"apellido_paterno" : "Tasayco",
+			"apellido_materno" : "Tasayco",
+			"cargo"            : "DIRECTOR",
+			"email"            : "apoyo-oti06@sineace.gob.pe",
+			"dni"              : "72885453",
+			"username"         : "728854530001",
+			"contrasena"       : "123456",
+			"celular"          : "4784514"
+		}
+	]
+}
