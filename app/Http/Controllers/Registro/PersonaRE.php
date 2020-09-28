@@ -40,7 +40,7 @@ class PersonaRE extends Controller
     }
 
 
-    public function Actualizar(Request $r)
+    public function Registrar(Request $r)
     {
         if ( $r->ajax() ) {
             $mensaje= [
@@ -50,15 +50,16 @@ class PersonaRE extends Controller
             ];
 
             $rules = [
-                'email' => ['required', 'email']
+                'email_a' => ['required', 'email'],
+                'celular_a' => ['required'],
+                'direccion' => ['required'],
             ];
 
             $validator=Validator::make($r->all(), $rules,$mensaje);
 
             if ( !$validator->fails() ) {
                 $r['dni'] = Auth::user()->dni;
-                $r['codi_depe_tde']=substr($r->codi_depe_tde,5);
-                $id = Persona::Actualizar($r);
+                $id = Persona::Registrar($r);
                 $miarchivo = $this->GenerarPDF($r, $id);
                 $return['rst'] = 1;
                 $return['miarchivo'] = $miarchivo;
@@ -91,28 +92,11 @@ class PersonaRE extends Controller
             }
         }
 
-        $r['ubigeo'] = $persona->codi_dist_tdi.'-'.$persona->codi_prov_tpr.'-'.$persona->codi_depa_dpt;
-        $ubigeo = PersonaPG::ListarDistritos($r);
-
-        $r['codi_depe_tde'] = $persona->codi_depe_tde;
-        $area = PersonaPG::ListarAreas($r);
-
-        $r['codi_carg_tca'] = $persona->codi_carg_tca;
-        $cargo = PersonaPG::ListarCargos($r);
-        $adicional= [
-            'distrito'      => $ubigeo[0]->nomb_dist_tdi,
-            'provincia'     => $ubigeo[0]->nomb_prov_tpr,
-            'departamento'  => $ubigeo[0]->nomb_dpto_dpt,
-            'area'          => $area[0]->nombre_depend,
-            'cargo'         => $cargo[0]->desc_carg_tca
-        ];
-        
         $pdfOrientation = 'portrait';
         $datos = [
-            'persona'   => $persona, 
-            'adicional' => $adicional
+            'persona'   => $persona,
         ];
-        $pdf =  PDF::loadView('actualizar.misdatos.pdf.firmar', $datos)
+        $pdf =  PDF::loadView('confidencial.registro.pdf.firmar', $datos)
                 ->setPaper('a4')
                 ->setOrientation($pdfOrientation);
         $pdf->save($url);

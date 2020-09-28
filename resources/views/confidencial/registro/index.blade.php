@@ -77,7 +77,7 @@
           <div class="panel-body row">
             <div class="form-group col-xl-6 col-lg-6 col-md-12">
               <label class="form-control-label">Nombres y apellidos:</label>
-              <input type="text" class="form-control" name="txt_denunciado" id="txt_denunciado">
+              <input type="text" class="form-control" name="txt_usuario" id="txt_usuario">
               <input type="hidden" class="form-control" name="txt_paterno_u" id="txt_paterno_u" readonly>
               <input type="hidden" class="form-control" name="txt_materno_u" id="txt_materno_u" readonly>
               <input type="hidden" class="form-control" name="txt_nombre_u" id="txt_nombre_u" readonly>

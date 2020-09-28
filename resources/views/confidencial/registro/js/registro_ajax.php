@@ -6,7 +6,7 @@ var AjaxRegistro={
         masterG.postAjax(url,data,evento);
     },
     Listar: (evento)=> {
-        var data=$("#RegistroForm").serialize().split("txt_").join("").split("slct_").join("");
+        var data={};
         url='AjaxDynamic/Registro.PersonaRE@Listar';
         masterG.postAjax(url,data,evento);
     },
