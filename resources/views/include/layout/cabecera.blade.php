@@ -15,7 +15,7 @@
         title="Remark">
       <img class="navbar-brand-logo navbar-brand-logo-special" src="Config/icon.png"
         title="Remark">
-      <span class="navbar-brand-text"> EBTP</span>
+      <span class="navbar-brand-text"> </span>
     </a>
   </div>
 

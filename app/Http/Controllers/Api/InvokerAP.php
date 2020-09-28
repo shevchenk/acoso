@@ -23,10 +23,10 @@ class InvokerAP extends Controller
     {
         $serverName= $_SERVER['SERVER_NAME'];
         if( $serverName=='localhost' ){
-            $serverName='localhost/misdatos/public';
+            $serverName='localhost/acoso/public';
         }
         elseif( $serverName=='172.16.101.74' ){
-            $serverName='172.16.101.74/misdatos/public';
+            $serverName='172.16.101.74/acoso/public';
         }
 
         $fileDownloadUrl='';
