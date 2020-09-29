@@ -7,7 +7,7 @@ $(document).ready( ()=> {
     $("#RegistroForm #slct_afectada").change(Registro.Afectada);
     masterG.SelectImagen('','#RegistroForm #pdf_img, #txt_file_imagen, #txt_firma_imagen');
     $("#RegistroForm #txt_afectada").easyAutocomplete(AfectadaOpciones);
-    $("#RegistroForm #txt_denunciado").easyAutocomplete(DenunciadoOpciones);
+    $("#RegistroForm #txt_denunciada").easyAutocomplete(DenunciadoOpciones);
     masterG.overlayG(true);
     AjaxRegistro.Listar(Registro.HTMLListar);
 });
@@ -19,16 +19,16 @@ var Registro = {
         if( val == 1 ){
             $(".Usuario").hide();
             $("#RegistroForm #txt_afectada").attr("readonly","true");
-            $("#RegistroForm #txt_afectada").val(ValidaUsuario.persona);
-            $("#RegistroForm #txt_paterno_a").val(ValidaUsuario.paterno);
-            $("#RegistroForm #txt_materno_a").val(ValidaUsuario.materno);
-            $("#RegistroForm #txt_nombre_a").val(ValidaUsuario.nombre);
-            $("#RegistroForm #txt_dni_a").val(ValidaUsuario.dni);
-            $("#RegistroForm #txt_dependencia_a").val(ValidaUsuario.dependencia);
-            $("#RegistroForm #txt_cargo_a").val(ValidaUsuario.cargo);
-            $("#RegistroForm #txt_direccion_a").val(ValidaUsuario.direccion);
-            $("#RegistroForm #txt_celular_a").val(ValidaUsuario.celular);
-            $("#RegistroForm #txt_email_a").val(ValidaUsuario.email);
+            $("#RegistroForm #txt_afectada").val(ValidaUsuarioG.persona);
+            $("#RegistroForm #txt_paterno_a").val(ValidaUsuarioG.paterno);
+            $("#RegistroForm #txt_materno_a").val(ValidaUsuarioG.materno);
+            $("#RegistroForm #txt_nombre_a").val(ValidaUsuarioG.nombre);
+            $("#RegistroForm #txt_dni_a").val(ValidaUsuarioG.dni);
+            $("#RegistroForm #txt_dependencia_a").val(ValidaUsuarioG.dependencia);
+            $("#RegistroForm #txt_cargo_a").val(ValidaUsuarioG.cargo);
+            $("#RegistroForm #txt_direccion_a").val(ValidaUsuarioG.direccion);
+            $("#RegistroForm #txt_celular_a").val(ValidaUsuarioG.celular);
+            $("#RegistroForm #txt_email_a").val(ValidaUsuarioG.email);
         }
         else{
             $(".Usuario").show();
@@ -42,49 +42,102 @@ var Registro = {
     
     HTMLListar : (result)=> {
         masterG.overlayG();
-        ValidaUsuario.persona = result.persona;
-        ValidaUsuario.paterno = result.paterno;
-        ValidaUsuario.materno = result.materno;
-        ValidaUsuario.nombre = result.nombre;
-        ValidaUsuario.dni = result.dni;
-        ValidaUsuario.dependencia = result.dependencia;
-        ValidaUsuario.cargo = result.cargo;
-        ValidaUsuario.direccion = result.direccion;
-        ValidaUsuario.celular = result.celular;
-        ValidaUsuario.email = result.email;
-        $("#RegistroForm #txt_afectada").val(ValidaUsuario.persona);
-        $("#RegistroForm #txt_paterno_a").val(ValidaUsuario.paterno);
-        $("#RegistroForm #txt_materno_a").val(ValidaUsuario.materno);
-        $("#RegistroForm #txt_nombre_a").val(ValidaUsuario.nombre);
-        $("#RegistroForm #txt_dni_a").val(ValidaUsuario.dni);
-        $("#RegistroForm #txt_dependencia_a").val(ValidaUsuario.dependencia);
-        $("#RegistroForm #txt_cargo_a").val(ValidaUsuario.cargo);
-        $("#RegistroForm #txt_direccion_a").val(ValidaUsuario.direccion);
-        $("#RegistroForm #txt_celular_a").val(ValidaUsuario.celular);
-        $("#RegistroForm #txt_email_a").val(ValidaUsuario.email);
+        ValidaUsuarioG.persona = result.data.persona;
+        ValidaUsuarioG.paterno = result.data.paterno;
+        ValidaUsuarioG.materno = result.data.materno;
+        ValidaUsuarioG.nombre = result.data.nombre;
+        ValidaUsuarioG.dni = result.data.dni;
+        ValidaUsuarioG.dependencia = result.data.dependencia;
+        ValidaUsuarioG.cargo = result.data.cargo;
+        ValidaUsuarioG.direccion = result.data.direccion;
+        ValidaUsuarioG.celular = result.data.celular;
+        ValidaUsuarioG.email = result.data.email;
+        
+        $("#RegistroForm #txt_afectada").val(ValidaUsuarioG.persona);
+        $("#RegistroForm #txt_paterno_a").val(ValidaUsuarioG.paterno);
+        $("#RegistroForm #txt_materno_a").val(ValidaUsuarioG.materno);
+        $("#RegistroForm #txt_nombre_a").val(ValidaUsuarioG.nombre);
+        $("#RegistroForm #txt_dni_a").val(ValidaUsuarioG.dni);
+        $("#RegistroForm #txt_dependencia_a").val(ValidaUsuarioG.dependencia);
+        $("#RegistroForm #txt_cargo_a").val(ValidaUsuarioG.cargo);
+        $("#RegistroForm #txt_direccion_a").val(ValidaUsuarioG.direccion);
+        $("#RegistroForm #txt_celular_a").val(ValidaUsuarioG.celular);
+        $("#RegistroForm #txt_email_a").val(ValidaUsuarioG.email);
 
-        $("#RegistroForm #txt_usuario").val(ValidaUsuario.persona);
-        $("#RegistroForm #txt_paterno_u").val(ValidaUsuario.paterno);
-        $("#RegistroForm #txt_materno_u").val(ValidaUsuario.materno);
-        $("#RegistroForm #txt_nombre_u").val(ValidaUsuario.nombre);
-        $("#RegistroForm #txt_dni_u").val(ValidaUsuario.dni);
-        $("#RegistroForm #txt_dependencia_u").val(ValidaUsuario.dependencia);
-        $("#RegistroForm #txt_cargo_u").val(ValidaUsuario.cargo);
-        $("#RegistroForm #txt_celular_u").val(ValidaUsuario.celular);
-        $("#RegistroForm #txt_email_u").val(ValidaUsuario.email);
+        $("#RegistroForm #txt_usuario").val(ValidaUsuarioG.persona);
+        $("#RegistroForm #txt_paterno_u").val(ValidaUsuarioG.paterno);
+        $("#RegistroForm #txt_materno_u").val(ValidaUsuarioG.materno);
+        $("#RegistroForm #txt_nombre_u").val(ValidaUsuarioG.nombre);
+        $("#RegistroForm #txt_dni_u").val(ValidaUsuarioG.dni);
+        $("#RegistroForm #txt_dependencia_u").val(ValidaUsuarioG.dependencia);
+        $("#RegistroForm #txt_cargo_u").val(ValidaUsuarioG.cargo);
+        $("#RegistroForm #txt_celular_u").val(ValidaUsuarioG.celular);
+        $("#RegistroForm #txt_email_u").val(ValidaUsuarioG.email);
+    },
+
+    Validar : ()=> {
+        r = true;
+
+        if( $("#RegistroForm #txt_dni_a").val() == '' ){
+            r = false;
+            msjG.alert('warning', 'Buscar y seleccionar persona afectada', 5000 );
+            $("#RegistroForm #txt_dni_a").focus();
+        }
+        else if( $("#RegistroForm #txt_direccion_a").val() == '' ){
+            r = false;
+            msjG.alert('warning', 'Ingresar domicilio', 5000 );
+            $("#RegistroForm #txt_direccion_a").focus();
+        }
+        else if( $("#RegistroForm #txt_celular_a").val() == '' ){
+            r = false;
+            msjG.alert('warning', 'Ingresar celular de contacto', 5000 );
+            $("#RegistroForm #txt_celular_a").focus();
+        }
+        else if( $("#RegistroForm #txt_email_a").val() == '' ){
+            r = false;
+            msjG.alert('warning', 'Ingresar email', 5000 );
+            $("#RegistroForm #txt_email_a").focus();
+        }
+        else if( $("#RegistroForm #txt_dni_d").val() == '' ){
+            r = false;
+            msjG.alert('warning', 'Buscar y seleccionar persona a denunciar', 5000 );
+            $("#RegistroForm #txt_dni_d").focus();
+        }
+        else if( $("#RegistroForm #txt_descripcion").val() == '' ){
+            r = false;
+            msjG.alert('warning', 'Ingresar la descripción de los hechos', 5000 );
+            $("#RegistroForm #txt_descripcion").focus();
+        }
+        else if( $("#RegistroForm #pdf_nombre").val() == '' ){
+            r = false;
+            msjG.alert('warning', 'Buscar y seleccionar medio probatorio(Archivo)', 5000 );
+            $("#RegistroForm #pdf_nombre").focus();
+        }
+
+        return r;
     },
     
     Registrar : ()=> {
-        msjG.question('Registrar formulario y generar PDF', '', Registro.RegistrarOk );
+        if( Registro.Validar() ){
+            msjG.question('Registrar formulario y generar PDF', '', Registro.RegistrarOk );
+        }
     },
     
     RegistrarOk : ()=>{
         masterG.overlayG(true);
-        AjaxRegistro.Registrar(HTMLRegistrar);
+        AjaxRegistro.Registrar(Registro.HTMLRegistrar);
     },
     
     HTMLRegistrar : (result)=> {
-        msjG.alert('success', result.msj, 5000 );
+        if( result.rst==1 ){
+            msjG.alert('success', result.msj, 5000 );
+            masterG.SelectImagen(result.miarchivo,'#txt_file_imagen','#txt_file');
+            miArchivoG = result.miarchivo;
+        }
+        else{
+            msjG.alert('warning', result.msj, 3000 );
+        }
+        masterG.overlayG();
     },
 
     Firmar : ()=> {
@@ -96,4 +149,16 @@ var Registro = {
         }
     }
 }
+
+window.addEventListener('invokerOk', (e)=> {
+    msjG.alert('success', 'Documento firmado correctamente', 4000 );
+    masterG.SelectImagen(archivoFirmadoG,'#txt_firma_imagen','#txt_firma');
+    //location.reload();
+    $("#RegistroForm #txt_denunciada, #RegistroForm #txt_dependencia_d, #RegistroForm #txt_cargo_d").val("");
+    $("#RegistroForm #txt_paterno_d, #RegistroForm #txt_materno_d, #RegistroForm #txt_nombre_d, #RegistroForm #txt_dni_d").val("");
+    $("#RegistroForm #txt_descripcion, #RegistroForm #pdf_nombre, #RegistroForm #pdf_archivo").val("");
+    masterG.SelectImagen('','#RegistroForm #pdf_img, #txt_file_imagen, #txt_firma_imagen');
+    $("#RegistroForm #slct_afectada").val(1);
+    Registro.Afectada();
+});
 </script>

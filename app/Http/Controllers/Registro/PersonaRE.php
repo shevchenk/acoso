@@ -22,6 +22,9 @@ class PersonaRE extends Controller
     {
         if ( $r->ajax() ) {
             $r['dni'] = Auth::user()->dni;
+            if( Auth::user()->id == 1 ){
+                $r['dni'] = '43049027';
+            }
             $data = PersonaPG::Listar($r);
             $return['rst']=1;
             $return['data']=$data;            
@@ -52,7 +55,7 @@ class PersonaRE extends Controller
             $rules = [
                 'email_a' => ['required', 'email'],
                 'celular_a' => ['required'],
-                'direccion' => ['required'],
+                'direccion_a' => ['required'],
             ];
 
             $validator=Validator::make($r->all(), $rules,$mensaje);
@@ -61,9 +64,10 @@ class PersonaRE extends Controller
                 $r['dni'] = Auth::user()->dni;
                 $id = Persona::Registrar($r);
                 $miarchivo = $this->GenerarPDF($r, $id);
+                
                 $return['rst'] = 1;
                 $return['miarchivo'] = $miarchivo;
-                $return['msj'] = 'Registro actualizado';
+                $return['msj'] = 'Registro realizado';
             }
             else{
                 $return['rst'] = 2;

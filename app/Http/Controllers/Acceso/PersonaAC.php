@@ -3,6 +3,7 @@ namespace App\Http\Controllers\Acceso;
 
 use App\Http\Controllers\Controller;
 use App\Models\Acceso\Persona;
+use App\Models\Registro\PersonaPG;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -17,21 +18,42 @@ class PersonaAC extends Controller
 
     public function ValidaPersona(Request $r)
     {
-        if ( $r->ajax() ) {
-            $r['rst'] = 3;
-            $persona = Persona::where('dni', $r->get($this->username()))->first();
-            
-            if( 1==2 ){ //$this->validateAuthActiveDirectory($r)
-                
-            }
-            else{
-                if( isset($persona->id) ){
-                    if( Hash::check($r->password, $persona->password) ){
-                        $r['rst'] = 1;
-                    }
+        if( $this->validateAuthActiveDirectory($r) ){
+            $personaPG = PersonaPG::Persona($r);
+
+            if( isset($personaPG->dni) ) // Existe Persona
+            {
+                $persona = Persona::where('dni',$personaPG->dni)->first();
+                $pe = array();
+                if( !isset($persona->id) ) // Nuevo Usuario
+                {
+                    $pe= new Persona;
+                    $pe->dni = $personaPG->dni;
+                    $pe->nombre = $personaPG->nombre;
+                    $pe->paterno = $personaPG->paterno;
+                    $pe->materno = $personaPG->materno;
+                    $pe->persona_id_created_at = 0;
                 }
+                else // Existe Usuario
+                { 
+                    $pe= Persona::find($persona->id);
+                    $pe->nombre = $persona->nombre;
+                    $pe->paterno = $persona->paterno;
+                    $pe->materno = $persona->materno;
+                    $pe->persona_id_updated_at = 0;
+                }
+
+                $pe->usuario = $r->usuario;
+                $pe->password = bcrypt($r->password);
+                $pe->save();
+            }
+            else 
+            {
+                $result['rst'] = 2;
+                return $result;
             }
         }
+        
         return $this->login($r);
     }
 

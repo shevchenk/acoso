@@ -77,7 +77,7 @@
           <div class="panel-body row">
             <div class="form-group col-xl-6 col-lg-6 col-md-12">
               <label class="form-control-label">Nombres y apellidos:</label>
-              <input type="text" class="form-control" name="txt_usuario" id="txt_usuario">
+              <input type="text" class="form-control" name="txt_usuario" id="txt_usuario" readonly>
               <input type="hidden" class="form-control" name="txt_paterno_u" id="txt_paterno_u" readonly>
               <input type="hidden" class="form-control" name="txt_materno_u" id="txt_materno_u" readonly>
               <input type="hidden" class="form-control" name="txt_nombre_u" id="txt_nombre_u" readonly>
@@ -106,12 +106,12 @@
       <div class="col-xl-12 col-lg-12">
         <div class="panel panel-info panel-line">
           <div class="panel-heading">
-            <h3 class="panel-title">Datos del denunciado</h3>
+            <h3 class="panel-title">Datos de la persona a denunciar</h3>
           </div>
           <div class="panel-body row">
             <div class="form-group col-xl-6 col-lg-6 col-md-12">
               <label class="form-control-label">Nombres y apellidos:</label>
-              <input type="text" class="form-control" name="txt_denunciado" id="txt_denunciado">
+              <input type="text" class="form-control" name="txt_denunciada" id="txt_denunciada">
               <input type="hidden" class="form-control" name="txt_paterno_d" id="txt_paterno_d" readonly>
               <input type="hidden" class="form-control" name="txt_materno_d" id="txt_materno_d" readonly>
               <input type="hidden" class="form-control" name="txt_nombre_d" id="txt_nombre_d" readonly>
@@ -193,7 +193,7 @@
         </div>
       </div>
 
-      <div class="col-lg-4 col-md-6">
+      <div class="col-lg-4 col-md-6" style="display:none;">
         <div class="panel panel-info panel-line">
           <div class="panel-heading">
             <h3 class="panel-title">Descarga tu PDF firmado</h3>

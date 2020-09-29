@@ -6,14 +6,14 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     @section('description')
-      <meta name="description" content="Software actualización de datos personales">
+      <meta name="description" content="Software formulario de denuncia">
     @show
     
     @section('author')
       <meta name="author" content="Ing. Jorge Salcedo Franco (Shevchenko)">
     @show
 
-    <title>.::SAE::.</title>
+    <title>.::Confidencial::.</title>
 
     @section('include')
       <link rel="apple-touch-icon" href="Config/icon.png">

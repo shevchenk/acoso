@@ -34,39 +34,39 @@
             <tbody>
                 <tr>
                     <td width="35%"><strong>DNI:</strong></td>
-                    <td width="65%">{{ @$persona->dni }}</td>
+                    <td width="65%">{{ @$persona->dni_a }}</td>
                 </tr>
                 <tr>
                     <td width="35%"><strong>Nombre:</strong></td>
-                    <td width="65%">{{ @$persona->nombre }}</td>
+                    <td width="65%">{{ @$persona->nombre_a }}</td>
                 </tr>
                 <tr>
                     <td width="35%"><strong>Paterno:</strong></td>
-                    <td width="65%">{{ @$persona->paterno }}</td>
+                    <td width="65%">{{ @$persona->paterno_a }}</td>
                 </tr>
                 <tr>
                     <td width="35%"><strong>Materno:</strong></td>
-                    <td width="65%">{{ @$persona->materno }}</td>
+                    <td width="65%">{{ @$persona->materno_a }}</td>
                 </tr>
                 <tr>
                     <td width="35%"><strong>Dependencia:</strong></td>
-                    <td width="65%">{{ @$persona->dependencia }}</td>
+                    <td width="65%">{{ @$persona->dependencia_a }}</td>
                 </tr>
                 <tr>
                     <td width="35%"><strong>Cargo:</strong></td>
-                    <td width="65%">{{ @$persona->cargo }}</td>
+                    <td width="65%">{{ @$persona->cargo_a }}</td>
                 </tr>
                 <tr>
                     <td width="35%"><strong>Celular:</strong></td>
-                    <td width="65%">{{ @$persona->celular }}</td>
+                    <td width="65%">{{ @$persona->celular_a }}</td>
                 </tr>
                 <tr>
                     <td width="35%"><strong>Email:</strong></td>
-                    <td width="65%">{{ @$persona->email }}</td>
+                    <td width="65%">{{ @$persona->email_a }}</td>
                 </tr>
                 <tr>
                     <td width="35%"><strong>Dirección:</strong></td>
-                    <td width="65%">{{ @$persona->direccion }}</td>
+                    <td width="65%">{{ @$persona->direccion_a }}</td>
                 </tr>
             </tbody>
         </table>
@@ -78,27 +78,27 @@
             <tbody>
                 <tr>
                     <td width="35%"><strong>DNI:</strong></td>
-                    <td width="65%">{{ @$persona->dni }}</td>
+                    <td width="65%">{{ @$persona->dni_d }}</td>
                 </tr>
                 <tr>
                     <td width="35%"><strong>Nombre:</strong></td>
-                    <td width="65%">{{ @$persona->nombre }}</td>
+                    <td width="65%">{{ @$persona->nombre_d }}</td>
                 </tr>
                 <tr>
                     <td width="35%"><strong>Paterno:</strong></td>
-                    <td width="65%">{{ @$persona->paterno }}</td>
+                    <td width="65%">{{ @$persona->paterno_d }}</td>
                 </tr>
                 <tr>
                     <td width="35%"><strong>Materno:</strong></td>
-                    <td width="65%">{{ @$persona->materno }}</td>
+                    <td width="65%">{{ @$persona->materno_d }}</td>
                 </tr>
                 <tr>
                     <td width="35%"><strong>Dependencia:</strong></td>
-                    <td width="65%">{{ @$persona->dependencia }}</td>
+                    <td width="65%">{{ @$persona->dependencia_d }}</td>
                 </tr>
                 <tr>
                     <td width="35%"><strong>Cargo:</strong></td>
-                    <td width="65%">{{ @$persona->cargo }}</td>
+                    <td width="65%">{{ @$persona->cargo_d }}</td>
                 </tr>
             </tbody>
         </table>
@@ -110,27 +110,27 @@
             <tbody>
                 <tr>
                     <td width="35%"><strong>DNI:</strong></td>
-                    <td width="65%">{{ @$persona->dni }}</td>
+                    <td width="65%">{{ @$persona->dni_u }}</td>
                 </tr>
                 <tr>
                     <td width="35%"><strong>Nombre:</strong></td>
-                    <td width="65%">{{ @$persona->nombre }}</td>
+                    <td width="65%">{{ @$persona->nombre_u }}</td>
                 </tr>
                 <tr>
                     <td width="35%"><strong>Paterno:</strong></td>
-                    <td width="65%">{{ @$persona->paterno }}</td>
+                    <td width="65%">{{ @$persona->paterno_u }}</td>
                 </tr>
                 <tr>
                     <td width="35%"><strong>Materno:</strong></td>
-                    <td width="65%">{{ @$persona->materno }}</td>
+                    <td width="65%">{{ @$persona->materno_u }}</td>
                 </tr>
                 <tr>
                     <td width="35%"><strong>Dependencia:</strong></td>
-                    <td width="65%">{{ @$persona->dependencia }}</td>
+                    <td width="65%">{{ @$persona->dependencia_u }}</td>
                 </tr>
                 <tr>
                     <td width="35%"><strong>Cargo:</strong></td>
-                    <td width="65%">{{ @$persona->cargo }}</td>
+                    <td width="65%">{{ @$persona->cargo_u }}</td>
                 </tr>
             </tbody>
         </table>
@@ -146,7 +146,7 @@
                 </tr>
                 <tr>
                     <td width="35%"><strong>Adjuntó archivo?:</strong></td>
-                    <td width="65%">{{ @$persona->ruta_archivo }}</td>
+                    <td width="65%">{{ basename(@$persona->ruta_archivo) }}</td>
                 </tr>
             </tbody>
         </table>

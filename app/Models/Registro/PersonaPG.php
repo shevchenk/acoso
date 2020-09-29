@@ -39,8 +39,8 @@ class PersonaPG extends Model
                     , 'mp.num_tel_per AS celular', 'mp.email_emp_per AS email', 'mp.dir_emp_per AS direccion', 'mp.dir1_nomb_via AS via'
                     , 'mp.codi_depa_dpt', 'mp.codi_prov_tpr', 'mp.codi_dist_tdi'
                     , 'di.nomb_dist_tdi', 'pr.nomb_prov_tpr', 'r.nomb_dpto_dpt'
-                    , 'mp.codi_depe_tde', 'mp.carg_area_per AS cargo',
-                    DB::raw('CONCAT(mp.nom_emp_per, " ", mp.ape_pat_per, " ", mp.ape_mat_per) AS persona')
+                    , 'mp.codi_depe_tde', 'mp.carg_area_per AS cargo'
+                    , DB::raw("CONCAT(mp.nom_emp_per,  ' ', mp.ape_pat_per, ' ',  mp.ape_mat_per) AS persona")
                     )
                     ->where('mp.libr_elec_per',$r->dni)
                     ->first();
@@ -68,8 +68,8 @@ class PersonaPG extends Model
                 , 'mp.num_tel_per AS celular', 'mp.email_emp_per AS email', 'mp.dir_emp_per AS direccion', 'mp.dir1_nomb_via AS via'
                 , 'mp.codi_depa_dpt', 'mp.codi_prov_tpr', 'mp.codi_dist_tdi'
                 , 'di.nomb_dist_tdi', 'pr.nomb_prov_tpr', 'r.nomb_dpto_dpt'
-                , 'mp.codi_depe_tde', 'mp.carg_area_per AS cargo', 'mp.libr_elec_per AS detalle',
-                DB::raw('CONCAT(mp.nom_emp_per, " ", mp.ape_pat_per, " ", mp.ape_mat_per) AS persona')
+                , 'mp.codi_depe_tde', 'mp.carg_area_per AS cargo', 'mp.libr_elec_per AS detalle'
+                , DB::raw("CONCAT(mp.nom_emp_per,  ' ', mp.ape_pat_per, ' ',  mp.ape_mat_per) AS persona")
                 )
                 ->where(
                     function($query) use ($r){
@@ -79,7 +79,7 @@ class PersonaPG extends Model
                                 $dphrase= explode(" ",$phrase);
                                 $filtro=trim($dphrase[0]);
                                 $query->where(
-                                    function($query2) use ($filtro0){
+                                    function($query2) use ($filtro){
                                         $query2->where('mp.nom_emp_per','ILIKE','%'.$filtro.'%')
                                         ->orWhere('mp.ape_pat_per','ILIKE','%'.$filtro.'%')
                                         ->orWhere('mp.ape_mat_per','ILIKE','%'.$filtro.'%');
@@ -87,7 +87,7 @@ class PersonaPG extends Model
                                 );
                                 if( count($dphrase)>1 AND trim($dphrase[1])!='' ){
                                     $filtro=trim($dphrase[1]);
-                                    $query->orWhere(
+                                    $query->where(
                                         function($query2) use ($filtro){
                                             $query2->where('mp.nom_emp_per','ILIKE','%'.$filtro.'%')
                                             ->orWhere('mp.ape_pat_per','ILIKE','%'.$filtro.'%')
@@ -97,7 +97,7 @@ class PersonaPG extends Model
                                 }
                                 if( count($dphrase)>2 AND trim($dphrase[2])!='' ){
                                     $filtro=trim($dphrase[2]);
-                                    $query->orWhere(
+                                    $query->where(
                                         function($query2) use ($filtro){
                                             $query2->where('mp.nom_emp_per','ILIKE','%'.$filtro.'%')
                                             ->orWhere('mp.ape_pat_per','ILIKE','%'.$filtro.'%')

@@ -36,6 +36,8 @@ var AfectadaOpciones = {
             var celular = $("#RegistroForm #txt_afectada").getSelectedItemData().celular;
             var email = $("#RegistroForm #txt_afectada").getSelectedItemData().email;
             var direccion = $("#RegistroForm #txt_afectada").getSelectedItemData().direccion;
+            var dependencia = $("#RegistroForm #txt_afectada").getSelectedItemData().dependencia;
+            var cargo = $("#RegistroForm #txt_afectada").getSelectedItemData().cargo;
 
             $("#RegistroForm #txt_dni_a").val(dni).trigger("change");
             $("#RegistroForm #txt_paterno_a").val(paterno).trigger("change");
@@ -44,6 +46,8 @@ var AfectadaOpciones = {
             $("#RegistroForm #txt_celular_a").val(celular).trigger("change");
             $("#RegistroForm #txt_email_a").val(email).trigger("change");
             $("#RegistroForm #txt_direccion_a").val(direccion).trigger("change");
+            $("#RegistroForm #txt_dependencia_a").val(dependencia).trigger("change");
+            $("#RegistroForm #txt_cargo_a").val(cargo).trigger("change");
             $("#RegistroForm #txt_afectada").addClass('is-valid').removeClass('is-invalid');
         },
         onLoadEvent: function() {
@@ -67,7 +71,7 @@ var DenunciadoOpciones = {
     ajaxSettings: { dataType: "json", method: "POST", data: {},
         success: function(r) {
             if(r.data.length==0){ 
-                msjG.alert('warning', $("#RegistroForm #txt_afectada").val()+' sin resultados', 5000 );
+                msjG.alert('warning', $("#RegistroForm #txt_denunciada").val()+' sin resultados', 5000 );
             }
         },
         error: (result)=> {
@@ -94,6 +98,8 @@ var DenunciadoOpciones = {
             var nombre = $("#RegistroForm #txt_denunciada").getSelectedItemData().nombre;
             var celular = $("#RegistroForm #txt_denunciada").getSelectedItemData().celular;
             var email = $("#RegistroForm #txt_denunciada").getSelectedItemData().email;
+            var dependencia = $("#RegistroForm #txt_denunciada").getSelectedItemData().dependencia;
+            var cargo = $("#RegistroForm #txt_denunciada").getSelectedItemData().cargo;
 
             $("#RegistroForm #txt_dni_d").val(dni).trigger("change");
             $("#RegistroForm #txt_paterno_d").val(paterno).trigger("change");
@@ -101,6 +107,8 @@ var DenunciadoOpciones = {
             $("#RegistroForm #txt_nombre_d").val(nombre).trigger("change");
             $("#RegistroForm #txt_celular_d").val(celular).trigger("change");
             $("#RegistroForm #txt_email_d").val(email).trigger("change");
+            $("#RegistroForm #txt_dependencia_d").val(dependencia).trigger("change");
+            $("#RegistroForm #txt_cargo_d").val(cargo).trigger("change");
             $("#RegistroForm #txt_denunciada").addClass('is-valid').removeClass('is-invalid');
         },
         onLoadEvent: function() {
