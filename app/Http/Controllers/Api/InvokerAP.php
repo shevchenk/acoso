@@ -2,7 +2,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Models\Midato\Persona;
+use App\Models\Registro\Persona;
 use Illuminate\Http\Request;
 use ZipArchive;
 use Mail;
@@ -134,7 +134,6 @@ class InvokerAP extends Controller
             @unlink($persona->ruta_archivo);
             @unlink("MisDatos/F".date("Ymd")."/User".$persona->id.'.pdf');
             @unlink("MisDatos/F".date("Ymd")."/User".$persona->id.'F.pdf');
-
             /*TODO:*************************************EMAIL**************************************************/
             $responsable = Persona::EmailResponsable();
             
@@ -147,8 +146,8 @@ class InvokerAP extends Controller
 
             $email = '';
             if( $persona->email_a != '' ){
-                //$email = [$persona->email_a];
-                $email=['apoyo-oti14@sineace.gob.pe']; // Colocar email corporativo
+                $email = [$persona->email_a];
+                //$email=['apoyo-oti14@sineace.gob.pe']; // Colocar email corporativo
             }
 
             if( $email == '' ){

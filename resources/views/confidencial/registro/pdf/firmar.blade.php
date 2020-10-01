@@ -9,7 +9,7 @@
  	</head>
 	<body>
     <!--img src="{{ asset('MisDatos/simular.png') }}" style="position:absolute; top:20; left:650;" /-->
-        <center>            
+        <center>
             <table class='text-center' style='width:95%;'>
                 <tbody>
                     <tr>

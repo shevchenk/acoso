@@ -1,12 +1,19 @@
 <?php
 use Illuminate\Support\Facades\Route;
+Route::post('/Refirma','Api\InvokerAP@FileRetorno');
 
 Route::apiResources([
     'Ebtp' => Api\EbtpAP::class,
     //'posts' => PostController::class,
 ]);
 
-Route::post('/Refirma','Refirma\InvokerRE@FileRetorno');
+Route::get('/backup', function () {
+
+    $request = request();
+
+    return \App\Models\Registro\PersonaPG::ListarPersona($request);
+});
+
 Route::get('/pas/{password}', function ($password) {
     echo bcrypt($password);
 });
@@ -19,8 +26,8 @@ Route::get(
         if( session()->has('opciones') ){
             $valores['valida_ruta_url'] = $ruta;
             //return view($ruta)->with($valores);
-    
-            if( strpos( session('opciones'),$ruta )!==false 
+
+            if( strpos( session('opciones'),$ruta )!==false
             || $ruta=='acceso.index'
             || $ruta=='acceso.myself' ){
                 return view($ruta)->with($valores);
